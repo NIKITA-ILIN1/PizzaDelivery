@@ -1,4 +1,6 @@
-﻿namespace PizzaDelivery.WindowsForms
+﻿using System;
+
+namespace PizzaDelivery.WindowsForms
 {
     partial class RegistrationForm
     {
@@ -45,6 +47,9 @@
             this.labelPhoneNumber = new System.Windows.Forms.Label();
             this.PhoneNumber = new System.Windows.Forms.TextBox();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.labelAddress = new System.Windows.Forms.Label();
+            this.Address = new System.Windows.Forms.TextBox();
+            this.listBoxAddressesFromDaData = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonRegister
@@ -96,7 +101,7 @@
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(21, 205);
+            this.labelEmail.Location = new System.Drawing.Point(25, 270);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 5;
@@ -125,7 +130,7 @@
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(128, 202);
+            this.Email.Location = new System.Drawing.Point(128, 263);
             this.Email.Name = "Email";
             this.Email.Size = new System.Drawing.Size(200, 20);
             this.Email.TabIndex = 10;
@@ -133,7 +138,7 @@
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(24, 251);
+            this.labelLogin.Location = new System.Drawing.Point(24, 313);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(33, 13);
             this.labelLogin.TabIndex = 11;
@@ -141,7 +146,7 @@
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(128, 248);
+            this.Login.Location = new System.Drawing.Point(128, 306);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(200, 20);
             this.Login.TabIndex = 12;
@@ -185,11 +190,40 @@
             this.DateOfBirth.Size = new System.Drawing.Size(200, 20);
             this.DateOfBirth.TabIndex = 17;
             // 
+            // labelAddress
+            // 
+            this.labelAddress.AutoSize = true;
+            this.labelAddress.Location = new System.Drawing.Point(25, 208);
+            this.labelAddress.Name = "labelAddress";
+            this.labelAddress.Size = new System.Drawing.Size(38, 13);
+            this.labelAddress.TabIndex = 18;
+            this.labelAddress.Text = "Адрес";
+            // 
+            // Address
+            // 
+            this.Address.Location = new System.Drawing.Point(128, 205);
+            this.Address.Name = "Address";
+            this.Address.Size = new System.Drawing.Size(200, 20);
+            this.Address.TabIndex = 19;
+            this.Address.TextChanged += new System.EventHandler(this.Address_TextChanged);
+            // 
+            // listBoxAddressesFromDaData
+            // 
+            this.listBoxAddressesFromDaData.FormattingEnabled = true;
+            this.listBoxAddressesFromDaData.Location = new System.Drawing.Point(128, 222);
+            this.listBoxAddressesFromDaData.Name = "listBoxAddressesFromDaData";
+            this.listBoxAddressesFromDaData.Size = new System.Drawing.Size(200, 17);
+            this.listBoxAddressesFromDaData.TabIndex = 20;
+            this.listBoxAddressesFromDaData.SelectedIndexChanged += new System.EventHandler(this.listBoxAddressesFromDaData_SelectedIndexChanged);
+            // 
             // RegistrationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.listBoxAddressesFromDaData);
+            this.Controls.Add(this.Address);
+            this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.DateOfBirth);
             this.Controls.Add(this.PhoneNumber);
             this.Controls.Add(this.labelPhoneNumber);
@@ -207,7 +241,6 @@
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.labelSurname);
             this.Controls.Add(this.buttonRegister);
-            //this.Name = "RegistrationForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
             this.ResumeLayout(false);
@@ -224,7 +257,7 @@
         private System.Windows.Forms.Label labelDateOfBirth;
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.TextBox Surname;
-        private System.Windows.Forms.TextBox Name;
+        private new System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.TextBox Patronymic;
         private System.Windows.Forms.TextBox Email;
         private System.Windows.Forms.Label labelLogin;
@@ -234,5 +267,8 @@
         private System.Windows.Forms.Label labelPhoneNumber;
         private System.Windows.Forms.TextBox PhoneNumber;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
+        private System.Windows.Forms.Label labelAddress;
+        private System.Windows.Forms.TextBox Address;
+        private System.Windows.Forms.ListBox listBoxAddressesFromDaData;
     }
 }
