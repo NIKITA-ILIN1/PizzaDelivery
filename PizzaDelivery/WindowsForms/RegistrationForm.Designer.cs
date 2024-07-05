@@ -54,7 +54,7 @@ namespace PizzaDelivery.WindowsForms
             // 
             // buttonRegister
             // 
-            this.buttonRegister.Location = new System.Drawing.Point(428, 188);
+            this.buttonRegister.Location = new System.Drawing.Point(529, 284);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(135, 23);
             this.buttonRegister.TabIndex = 0;
@@ -92,7 +92,7 @@ namespace PizzaDelivery.WindowsForms
             // labelDateOfBirth
             // 
             this.labelDateOfBirth.AutoSize = true;
-            this.labelDateOfBirth.Location = new System.Drawing.Point(24, 157);
+            this.labelDateOfBirth.Location = new System.Drawing.Point(22, 167);
             this.labelDateOfBirth.Name = "labelDateOfBirth";
             this.labelDateOfBirth.Size = new System.Drawing.Size(86, 13);
             this.labelDateOfBirth.TabIndex = 4;
@@ -101,7 +101,7 @@ namespace PizzaDelivery.WindowsForms
             // labelEmail
             // 
             this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(25, 270);
+            this.labelEmail.Location = new System.Drawing.Point(406, 40);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(32, 13);
             this.labelEmail.TabIndex = 5;
@@ -109,36 +109,36 @@ namespace PizzaDelivery.WindowsForms
             // 
             // Surname
             // 
-            this.Surname.Location = new System.Drawing.Point(128, 33);
+            this.Surname.Location = new System.Drawing.Point(128, 37);
             this.Surname.Name = "Surname";
-            this.Surname.Size = new System.Drawing.Size(200, 20);
+            this.Surname.Size = new System.Drawing.Size(251, 20);
             this.Surname.TabIndex = 6;
             // 
             // Name
             // 
-            this.Name.Location = new System.Drawing.Point(128, 74);
+            this.Name.Location = new System.Drawing.Point(128, 77);
             this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(200, 20);
+            this.Name.Size = new System.Drawing.Size(251, 20);
             this.Name.TabIndex = 7;
             // 
             // Patronymic
             // 
-            this.Patronymic.Location = new System.Drawing.Point(128, 113);
+            this.Patronymic.Location = new System.Drawing.Point(128, 117);
             this.Patronymic.Name = "Patronymic";
-            this.Patronymic.Size = new System.Drawing.Size(200, 20);
+            this.Patronymic.Size = new System.Drawing.Size(251, 20);
             this.Patronymic.TabIndex = 8;
             // 
             // Email
             // 
-            this.Email.Location = new System.Drawing.Point(128, 263);
+            this.Email.Location = new System.Drawing.Point(505, 36);
             this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(200, 20);
+            this.Email.Size = new System.Drawing.Size(251, 20);
             this.Email.TabIndex = 10;
             // 
             // labelLogin
             // 
             this.labelLogin.AutoSize = true;
-            this.labelLogin.Location = new System.Drawing.Point(24, 313);
+            this.labelLogin.Location = new System.Drawing.Point(405, 77);
             this.labelLogin.Name = "labelLogin";
             this.labelLogin.Size = new System.Drawing.Size(33, 13);
             this.labelLogin.TabIndex = 11;
@@ -146,15 +146,15 @@ namespace PizzaDelivery.WindowsForms
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(128, 306);
+            this.Login.Location = new System.Drawing.Point(505, 77);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(200, 20);
+            this.Login.Size = new System.Drawing.Size(251, 20);
             this.Login.TabIndex = 12;
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(390, 36);
+            this.labelPassword.Location = new System.Drawing.Point(406, 123);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(45, 13);
             this.labelPassword.TabIndex = 13;
@@ -162,15 +162,15 @@ namespace PizzaDelivery.WindowsForms
             // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(492, 33);
+            this.Password.Location = new System.Drawing.Point(505, 117);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(155, 20);
+            this.Password.Size = new System.Drawing.Size(251, 20);
             this.Password.TabIndex = 14;
             // 
             // labelPhoneNumber
             // 
             this.labelPhoneNumber.AutoSize = true;
-            this.labelPhoneNumber.Location = new System.Drawing.Point(390, 88);
+            this.labelPhoneNumber.Location = new System.Drawing.Point(406, 164);
             this.labelPhoneNumber.Name = "labelPhoneNumber";
             this.labelPhoneNumber.Size = new System.Drawing.Size(93, 13);
             this.labelPhoneNumber.TabIndex = 15;
@@ -178,16 +178,16 @@ namespace PizzaDelivery.WindowsForms
             // 
             // PhoneNumber
             // 
-            this.PhoneNumber.Location = new System.Drawing.Point(492, 85);
+            this.PhoneNumber.Location = new System.Drawing.Point(505, 164);
             this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Size = new System.Drawing.Size(155, 20);
+            this.PhoneNumber.Size = new System.Drawing.Size(251, 20);
             this.PhoneNumber.TabIndex = 16;
             // 
             // DateOfBirth
             // 
-            this.DateOfBirth.Location = new System.Drawing.Point(128, 157);
+            this.DateOfBirth.Location = new System.Drawing.Point(128, 164);
             this.DateOfBirth.Name = "DateOfBirth";
-            this.DateOfBirth.Size = new System.Drawing.Size(200, 20);
+            this.DateOfBirth.Size = new System.Drawing.Size(251, 20);
             this.DateOfBirth.TabIndex = 17;
             // 
             // labelAddress
@@ -203,7 +203,7 @@ namespace PizzaDelivery.WindowsForms
             // 
             this.Address.Location = new System.Drawing.Point(128, 205);
             this.Address.Name = "Address";
-            this.Address.Size = new System.Drawing.Size(200, 20);
+            this.Address.Size = new System.Drawing.Size(251, 20);
             this.Address.TabIndex = 19;
             this.Address.TextChanged += new System.EventHandler(this.Address_TextChanged);
             // 
@@ -212,7 +212,7 @@ namespace PizzaDelivery.WindowsForms
             this.listBoxAddressesFromDaData.FormattingEnabled = true;
             this.listBoxAddressesFromDaData.Location = new System.Drawing.Point(128, 222);
             this.listBoxAddressesFromDaData.Name = "listBoxAddressesFromDaData";
-            this.listBoxAddressesFromDaData.Size = new System.Drawing.Size(200, 17);
+            this.listBoxAddressesFromDaData.Size = new System.Drawing.Size(251, 134);
             this.listBoxAddressesFromDaData.TabIndex = 20;
             this.listBoxAddressesFromDaData.SelectedIndexChanged += new System.EventHandler(this.listBoxAddressesFromDaData_SelectedIndexChanged);
             // 

@@ -1,17 +1,23 @@
-﻿using Newtonsoft.Json.Linq;
-using PizzaDelivery.DataAccessObject.Services;
+﻿using PizzaDelivery.DataAccessObject.Services;
 using PizzaDelivery.Entity;
-using RestSharp;
 using System;
 using System.Windows.Forms;
+using Dadata;
 
 namespace PizzaDelivery.WindowsForms
 {
     public partial class RegistrationForm : Form
     {
+        private SuggestClientAsync api;
+
         public RegistrationForm()
         {
             InitializeComponent();
+
+            listBoxAddressesFromDaData.Visible = false;
+
+            var token = "ca31e39548cf4ccc48017654a9b62c4fe704048e";
+            api = new SuggestClientAsync(token);
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
@@ -31,29 +37,18 @@ namespace PizzaDelivery.WindowsForms
 
             if (input.Length >= 1)
             {
-                var client = new RestClient("https://suggestions.dadata.ru/suggestions.api./4_1/rs/suggest/address");
+                var result = await api.SuggestAddress(input);
 
-                var request = new RestRequest(Method.Post.ToString());
-
-                request.AddHeader("Content-Type", "application/json");
-                request.AddHeader("Authorization", "");//token
-
-                request.AddJsonBody(new { query = input, count = 10 });
-
-                var response = await client.ExecuteAsync(request);
-
-                if (response.IsSuccessful)
+                if (result.suggestions != null)
                 {
                     listBoxAddressesFromDaData.Items.Clear();
 
-                    var jsonResponse = JObject.Parse(response.Content);
-
-                    var suggestions = jsonResponse["suggestions"];
-
-                    foreach (var suggestion in suggestions)
+                    foreach (var suggestion in result.suggestions)
                     {
-                        listBoxAddressesFromDaData.Items.Add(suggestion["value"].ToString());
+                        listBoxAddressesFromDaData.Items.Add(suggestion.value);
                     }
+
+                    listBoxAddressesFromDaData.Visible = listBoxAddressesFromDaData.Items.Count > 0;
                 }
             }
         }
@@ -63,6 +58,8 @@ namespace PizzaDelivery.WindowsForms
             if (listBoxAddressesFromDaData.SelectedItem != null)
             {
                 Address.Text = listBoxAddressesFromDaData.SelectedItem.ToString();
+
+                listBoxAddressesFromDaData.Visible = false;
             }
         }
     }
