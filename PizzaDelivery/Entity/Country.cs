@@ -2,7 +2,7 @@
 {
     internal class Country
     {
-        public int CountryID { get; set; }
+        public int ID { get; set; }
         public string CountryName { get; set; }
     }
 }

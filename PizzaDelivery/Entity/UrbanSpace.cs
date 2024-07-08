@@ -2,7 +2,7 @@
 {
     internal class UrbanSpace
     {
-        public long UrbanSpaceID { get; set; }
+        public long ID { get; set; }
         public string UrbanSpaceName { get; set; }
     }
 }

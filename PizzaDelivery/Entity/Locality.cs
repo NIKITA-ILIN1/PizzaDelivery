@@ -2,7 +2,7 @@
 {
     internal class Locality
     {
-        public long LocalityID { get; set; }
+        public long ID { get; set; }
         public string LocalityName { get; set; }
     }
 }

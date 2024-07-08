@@ -4,8 +4,8 @@ using PizzaDelivery.Entity;
 
 namespace PizzaDelivery.Registration.Patterns
 {
-    private IUserDAO userDAO;
-    private VerificationsUserForRegistr userService; 
+    //private IUserDAO userDAO;
+    //private VerificationsUserForRegistr userService; 
 
     internal class FacadeRegistrUser
     {
@@ -17,18 +17,18 @@ namespace PizzaDelivery.Registration.Patterns
             return user;
         }
 
-        public void RegistrationUser(User user)
-        {
-            userDAO = new ImplUserDAO();
+        //public void RegistrationUser(User user)
+        //{
+        //    userDAO = new ImplUserDAO();
 
-            userDAO.SaveUser(user);
-        }
+        //    userDAO.SaveUser(user);
+        //}
 
-        public bool CheckExistUser(User user)
-        {
-            userService = new VerificationsUserForRegistr();
+        //public bool CheckExistUser(User user)
+        //{
+        //    userService = new VerificationsUserForRegistr();
 
-            return userService.CheckExistUser(user);
-        }
+        //    return userService.CheckExistUser(user);
+        //}
     }
 }
