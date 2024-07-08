@@ -26,6 +26,7 @@ namespace PizzaDelivery.WindowsForms
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             User newUser = new User();
+            Address newAddress = new Address();
 
             if (!UniversalMethodsCheckIsEmptyAndSelected.CheckStringsIsNullOfEmpty(Surname.Text, Name.Text, Patronymic.Text, Email.Text, Login.Text, Password.Text, PhoneNumber.Text) ||
                 DateOfBirth.Value == DateTime.Today)

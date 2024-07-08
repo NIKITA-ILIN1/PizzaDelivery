@@ -174,12 +174,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Connections\ConnectorDataBaseMicrosoftSQL .cs" />
-    <Compile Include="DataAccessObject\Implementations\ImplUserDAO.cs" />
+    <Compile Include="DataAccessObject\Implementations\ImplAuthUser.cs" />
+    <Compile Include="DataAccessObject\Implementations\ImplRegistrUser.cs" />
     <Compile Include="DataAccessObject\Interfaces\IUserDAO.cs" />
     <Compile Include="DataAccessObject\Services\UniversalMethodsCheckIsEmptyAndSelected.cs" />
     <Compile Include="DataAccessObject\Services\VerificationsUserForRegistr.cs" />
     <Compile Include="Entity\Address.cs" />
-    <Compile Include="Entity\Country.cs" />
     <Compile Include="Entity\Locality.cs" />
     <Compile Include="Entity\Order.cs" />
     <Compile Include="Entity\UrbanSpace.cs" />

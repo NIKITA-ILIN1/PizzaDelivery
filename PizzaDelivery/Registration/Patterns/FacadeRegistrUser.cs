@@ -1,14 +1,15 @@
 ﻿using PizzaDelivery.Dao.inreface;
+using PizzaDelivery.DataAccessObject.Implementations;
 using PizzaDelivery.DataAccessObject.Services;
 using PizzaDelivery.Entity;
 
 namespace PizzaDelivery.Registration.Patterns
 {
-    //private IUserDAO userDAO;
-    //private VerificationsUserForRegistr userService; 
-
     internal class FacadeRegistrUser
     {
+        private IUserDAO userDAO; 
+        private VerificationsUserForRegistr userService; 
+
         public User RegistrationFacade(string text, User user)
         {
             FactoryRegistrUser factoryRegistrUser = new FactoryRegistrUser();
@@ -17,18 +18,16 @@ namespace PizzaDelivery.Registration.Patterns
             return user;
         }
 
-        //public void RegistrationUser(User user)
-        //{
-        //    userDAO = new ImplUserDAO();
+        public void RegistrationUser(User user, Address address)
+        {
+            userDAO = new ImplRegistrUser();
+            userDAO.RegisterUser(user, address);
+        }
 
-        //    userDAO.SaveUser(user);
-        //}
-
-        //public bool CheckExistUser(User user)
-        //{
-        //    userService = new VerificationsUserForRegistr();
-
-        //    return userService.CheckExistUser(user);
-        //}
+        public bool CheckExistUser(User user)
+        {
+            userService = new VerificationsUserForRegistr();
+            return userService.CheckExistUser(user);
+        }
     }
 }

@@ -4,8 +4,8 @@ namespace PizzaDelivery.Dao.inreface
 {
     internal interface IUserDAO
     {
-        User FindUserByLoginAndPassword(User user);
-        User FindUserById(User user);
-        void SaveUser(User user);
+        void RegisterUser(User user, Address address);
+
+        User AuthenticateUser(User user);
     }
 }
