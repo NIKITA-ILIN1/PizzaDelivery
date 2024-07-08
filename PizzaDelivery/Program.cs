@@ -16,7 +16,7 @@ namespace PizzaDelivery
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PizzaDeliveryForm());
+            Application.Run(new Start_Form());
         }
     }
 }

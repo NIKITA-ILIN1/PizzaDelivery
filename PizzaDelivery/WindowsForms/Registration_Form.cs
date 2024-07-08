@@ -1,18 +1,21 @@
-﻿using PizzaDelivery.DataAccessObject.Services;
+﻿using Dadata;
+using PizzaDelivery.DataAccessObject.Services;
 using PizzaDelivery.Entity;
 using System;
 using System.Windows.Forms;
-using Dadata;
 
 namespace PizzaDelivery.WindowsForms
 {
-    public partial class RegistrationForm : Form
+    public partial class Registration_Form : Form
     {
+        private Form previousForm;
         private SuggestClientAsync api;
 
-        public RegistrationForm()
+        public Registration_Form(Form previousForm)
         {
             InitializeComponent();
+
+            this.previousForm = previousForm;
 
             listBoxAddressesFromDaData.Visible = false;
 
@@ -24,9 +27,10 @@ namespace PizzaDelivery.WindowsForms
         {
             User newUser = new User();
 
-            if (!UniversalMethodsCheckIsEmptyAndSelected.CheckStringsIsNullOfEmpty(Surname.Text, Name.Text, Patronymic.Text, Email.Text, Login.Text, Password.Text, PhoneNumber.Text) || 
+            if (!UniversalMethodsCheckIsEmptyAndSelected.CheckStringsIsNullOfEmpty(Surname.Text, Name.Text, Patronymic.Text, Email.Text, Login.Text, Password.Text, PhoneNumber.Text) ||
                 DateOfBirth.Value == DateTime.Today)
                 return;
+
 
 
         }
@@ -61,6 +65,22 @@ namespace PizzaDelivery.WindowsForms
 
                 listBoxAddressesFromDaData.Visible = false;
             }
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            previousForm.Show();
+            this.Close();
+        }
+
+        private void Registration_Form_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && previousForm.Visible)
+            {
+                return;
+            }
+
+            Application.Exit();
         }
     }
 }

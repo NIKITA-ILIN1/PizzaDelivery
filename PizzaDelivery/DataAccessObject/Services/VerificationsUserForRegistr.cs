@@ -11,7 +11,6 @@ namespace PizzaDelivery.DataAccessObject.Services
 
         public static string CheckEmailUser(string emailUser)
         {
-
             if (string.IsNullOrEmpty(emailUser))
             {
                 throw new Exception("Email is null of empty");
@@ -27,7 +26,6 @@ namespace PizzaDelivery.DataAccessObject.Services
 
         public static string CheckPhoneNumberUser(string phoneNumber)
         {
-
             PhoneNumberUtil phoneNumberUtil = PhoneNumberUtil.GetInstance();
 
             if (string.IsNullOrEmpty(phoneNumber))
@@ -61,7 +59,6 @@ namespace PizzaDelivery.DataAccessObject.Services
 
         public bool CheckExistUser(User user)
         {
-
             try
             {
                 sqlConnection.Open();

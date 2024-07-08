@@ -17,16 +17,16 @@ namespace PizzaDelivery.DataAccessObject.Services
             return true;
         }
 
-        //public static bool CheckComboBoxesIsSelected(params ComboBox[] comboBoxes)
-        //{
+        public static bool CheckComboBoxesIsSelected(params ComboBox[] comboBoxes)
+        {
 
-        //    foreach (ComboBox comboBox in comboBoxes)
-        //    {
-        //        if (comboBox.SelectedIndex == -1)
-        //            throw new Exception("ComboBoxes no selected");
-        //    }
+            foreach (ComboBox comboBox in comboBoxes)
+            {
+                if (comboBox.SelectedIndex == -1)
+                    throw new Exception("ComboBoxes no selected");
+            }
 
-        //    return true;
-        //}
+            return true;
+        }
     }
 }
