@@ -180,41 +180,39 @@
     <Compile Include="DataAccessObject\Services\UniversalMethodsCheckIsEmptyAndSelected.cs" />
     <Compile Include="DataAccessObject\Services\VerificationsUserForRegistr.cs" />
     <Compile Include="Entity\Address.cs" />
-    <Compile Include="Entity\Locality.cs" />
     <Compile Include="Entity\Order.cs" />
-    <Compile Include="Entity\UrbanSpace.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="DataAccessObject\Services\VerificationUserForAuth.cs" />
     <Compile Include="Registration\Patterns\FacadeRegistrUser.cs" />
     <Compile Include="Registration\Patterns\FactoryRegistrUser.cs" />
-    <Compile Include="WindowsForms\Registration_Form.cs">
+    <Compile Include="WindowsForms\PersonalAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForms\Registration_Form.Designer.cs">
-      <DependentUpon>Registration_Form.cs</DependentUpon>
+    <Compile Include="WindowsForms\PersonalAccount.Designer.cs">
+      <DependentUpon>PersonalAccount.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForms\Pizza_Delivery_Form.cs">
+    <Compile Include="WindowsForms\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForms\Pizza_Delivery_Form.Designer.cs">
-      <DependentUpon>Pizza_Delivery_Form.cs</DependentUpon>
+    <Compile Include="WindowsForms\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
     </Compile>
-    <Compile Include="WindowsForms\Start_Form.cs">
+    <Compile Include="WindowsForms\Start.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsForms\Start_Form.Designer.cs">
-      <DependentUpon>Start_Form.cs</DependentUpon>
+    <Compile Include="WindowsForms\Start.Designer.cs">
+      <DependentUpon>Start.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="WindowsForms\Registration_Form.resx">
-      <DependentUpon>Registration_Form.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForms\PersonalAccount.resx">
+      <DependentUpon>PersonalAccount.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForms\Pizza_Delivery_Form.resx">
-      <DependentUpon>Pizza_Delivery_Form.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForms\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsForms\Start_Form.resx">
-      <DependentUpon>Start_Form.cs</DependentUpon>
+    <EmbeddedResource Include="WindowsForms\Start.resx">
+      <DependentUpon>Start.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

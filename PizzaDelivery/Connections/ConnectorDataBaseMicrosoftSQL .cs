@@ -9,7 +9,7 @@ namespace PizzaDelivery
 
         private ConnectorDataBaseMicrosoftSQL()
         {
-            SqlConnection = new SqlConnection("Server=localhost\\SQLEXPRESS; Database=PizzaDeliveryDataBase;" +
+            SqlConnection = new SqlConnection("Server=localhost\\SQLEXPRESS; Database=Pizza_Delivery;" +
                                               "Integrated Security=true; TrustServerCertificate=true");
         }
 

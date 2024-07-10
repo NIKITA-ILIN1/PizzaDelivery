@@ -1,6 +1,6 @@
 ﻿namespace PizzaDelivery.WindowsForms
 {
-    partial class Registration_Form
+    partial class Registration
     {
         /// <summary>
         /// Required designer variable.
@@ -33,17 +33,15 @@
             this.Address = new System.Windows.Forms.TextBox();
             this.labelAddress = new System.Windows.Forms.Label();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
-            this.PhoneNumber = new System.Windows.Forms.TextBox();
-            this.labelPhoneNumber = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
             this.Login = new System.Windows.Forms.TextBox();
             this.labelLogin = new System.Windows.Forms.Label();
-            this.Email = new System.Windows.Forms.TextBox();
+            this.PhoneNumberOrEmail = new System.Windows.Forms.TextBox();
             this.Patronymic = new System.Windows.Forms.TextBox();
             this.Name = new System.Windows.Forms.TextBox();
             this.Surname = new System.Windows.Forms.TextBox();
-            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelPhoneNumberOrEmail = new System.Windows.Forms.Label();
             this.labelDateOfBirth = new System.Windows.Forms.Label();
             this.labelPatronymic = new System.Windows.Forms.Label();
             this.labelName = new System.Windows.Forms.Label();
@@ -69,6 +67,7 @@
             this.listBoxAddressesFromDaData.Size = new System.Drawing.Size(251, 134);
             this.listBoxAddressesFromDaData.TabIndex = 41;
             this.listBoxAddressesFromDaData.SelectedIndexChanged += new System.EventHandler(this.listBoxAddressesFromDaData_SelectedIndexChanged);
+            this.listBoxAddressesFromDaData.DoubleClick += new System.EventHandler(this.listBoxAddressesFromDaData_DoubleClick);
             // 
             // Address
             // 
@@ -94,25 +93,9 @@
             this.DateOfBirth.Size = new System.Drawing.Size(251, 20);
             this.DateOfBirth.TabIndex = 38;
             // 
-            // PhoneNumber
-            // 
-            this.PhoneNumber.Location = new System.Drawing.Point(495, 147);
-            this.PhoneNumber.Name = "PhoneNumber";
-            this.PhoneNumber.Size = new System.Drawing.Size(251, 20);
-            this.PhoneNumber.TabIndex = 37;
-            // 
-            // labelPhoneNumber
-            // 
-            this.labelPhoneNumber.AutoSize = true;
-            this.labelPhoneNumber.Location = new System.Drawing.Point(396, 147);
-            this.labelPhoneNumber.Name = "labelPhoneNumber";
-            this.labelPhoneNumber.Size = new System.Drawing.Size(93, 13);
-            this.labelPhoneNumber.TabIndex = 36;
-            this.labelPhoneNumber.Text = "Номер телефона";
-            // 
             // Password
             // 
-            this.Password.Location = new System.Drawing.Point(495, 100);
+            this.Password.Location = new System.Drawing.Point(519, 99);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(251, 20);
             this.Password.TabIndex = 35;
@@ -128,7 +111,7 @@
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(495, 60);
+            this.Login.Location = new System.Drawing.Point(519, 57);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(251, 20);
             this.Login.TabIndex = 33;
@@ -142,12 +125,12 @@
             this.labelLogin.TabIndex = 32;
             this.labelLogin.Text = "Login";
             // 
-            // Email
+            // PhoneNumberOrEmail
             // 
-            this.Email.Location = new System.Drawing.Point(495, 19);
-            this.Email.Name = "Email";
-            this.Email.Size = new System.Drawing.Size(251, 20);
-            this.Email.TabIndex = 31;
+            this.PhoneNumberOrEmail.Location = new System.Drawing.Point(519, 23);
+            this.PhoneNumberOrEmail.Name = "PhoneNumberOrEmail";
+            this.PhoneNumberOrEmail.Size = new System.Drawing.Size(251, 20);
+            this.PhoneNumberOrEmail.TabIndex = 31;
             // 
             // Patronymic
             // 
@@ -170,14 +153,14 @@
             this.Surname.Size = new System.Drawing.Size(251, 20);
             this.Surname.TabIndex = 28;
             // 
-            // labelEmail
+            // labelPhoneNumberOrEmail
             // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Location = new System.Drawing.Point(396, 23);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(32, 13);
-            this.labelEmail.TabIndex = 27;
-            this.labelEmail.Text = "Email";
+            this.labelPhoneNumberOrEmail.AutoSize = true;
+            this.labelPhoneNumberOrEmail.Location = new System.Drawing.Point(396, 23);
+            this.labelPhoneNumberOrEmail.Name = "labelPhoneNumberOrEmail";
+            this.labelPhoneNumberOrEmail.Size = new System.Drawing.Size(123, 13);
+            this.labelPhoneNumberOrEmail.TabIndex = 27;
+            this.labelPhoneNumberOrEmail.Text = "Номер телефона/Email";
             // 
             // labelDateOfBirth
             // 
@@ -225,27 +208,25 @@
             this.buttonRegister.UseVisualStyleBackColor = true;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             // 
-            // Registration_Form
+            // Registration
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 346);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.listBoxAddressesFromDaData);
             this.Controls.Add(this.Address);
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.DateOfBirth);
-            this.Controls.Add(this.PhoneNumber);
-            this.Controls.Add(this.labelPhoneNumber);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.labelLogin);
-            this.Controls.Add(this.Email);
+            this.Controls.Add(this.PhoneNumberOrEmail);
             this.Controls.Add(this.Patronymic);
             this.Controls.Add(this.Name);
             this.Controls.Add(this.Surname);
-            this.Controls.Add(this.labelEmail);
+            this.Controls.Add(this.labelPhoneNumberOrEmail);
             this.Controls.Add(this.labelDateOfBirth);
             this.Controls.Add(this.labelPatronymic);
             this.Controls.Add(this.labelName);
@@ -266,17 +247,15 @@
         private System.Windows.Forms.TextBox Address;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
-        private System.Windows.Forms.TextBox PhoneNumber;
-        private System.Windows.Forms.Label labelPhoneNumber;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox Login;
         private System.Windows.Forms.Label labelLogin;
-        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox PhoneNumberOrEmail;
         private System.Windows.Forms.TextBox Patronymic;
         private new System.Windows.Forms.TextBox Name;
         private System.Windows.Forms.TextBox Surname;
-        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelPhoneNumberOrEmail;
         private System.Windows.Forms.Label labelDateOfBirth;
         private System.Windows.Forms.Label labelPatronymic;
         private System.Windows.Forms.Label labelName;

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PizzaDelivery
@@ -16,7 +13,7 @@ namespace PizzaDelivery
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Start_Form());
+            Application.Run(new Start());
         }
     }
 }
