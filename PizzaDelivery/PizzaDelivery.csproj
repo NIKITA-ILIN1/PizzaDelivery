@@ -185,6 +185,12 @@
     <Compile Include="DataAccessObject\Services\VerificationUserForAuth.cs" />
     <Compile Include="Registration\Patterns\FacadeRegistrUser.cs" />
     <Compile Include="Registration\Patterns\FactoryRegistrUser.cs" />
+    <Compile Include="WindowsForms\Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\Order.Designer.cs">
+      <DependentUpon>Order.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowsForms\PersonalAccount.cs">
       <SubType>Form</SubType>
     </Compile>
