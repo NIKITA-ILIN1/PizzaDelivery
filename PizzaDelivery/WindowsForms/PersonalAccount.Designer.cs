@@ -29,25 +29,28 @@
         private void InitializeComponent()
         {
             this.buttonBack = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabControl = new System.Windows.Forms.TabControl();
+            this.PersonalData = new System.Windows.Forms.TabPage();
+            this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.PhoneNumber = new System.Windows.Forms.TextBox();
+            this.labelPhoneNumber = new System.Windows.Forms.Label();
+            this.labelLogin = new System.Windows.Forms.Label();
+            this.labelEmail = new System.Windows.Forms.Label();
+            this.labelDateOfBirth = new System.Windows.Forms.Label();
+            this.labelPatronymic = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.labelSurname = new System.Windows.Forms.Label();
+            this.Login = new System.Windows.Forms.TextBox();
+            this.Email = new System.Windows.Forms.TextBox();
+            this.Patronymic = new System.Windows.Forms.TextBox();
+            this.Name = new System.Windows.Forms.TextBox();
+            this.Surname = new System.Windows.Forms.TextBox();
+            this.MakeOrder = new System.Windows.Forms.TabPage();
+            this.Menu = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabControl.SuspendLayout();
+            this.PersonalData.SuspendLayout();
+            this.MakeOrder.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonBack
@@ -60,177 +63,198 @@
             this.buttonBack.UseVisualStyleBackColor = true;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
-            // tabControl1
+            // tabControl
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(3, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(794, 407);
-            this.tabControl1.TabIndex = 1;
+            this.tabControl.Controls.Add(this.PersonalData);
+            this.tabControl.Controls.Add(this.MakeOrder);
+            this.tabControl.Controls.Add(this.Menu);
+            this.tabControl.Location = new System.Drawing.Point(3, 2);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(794, 407);
+            this.tabControl.TabIndex = 1;
             // 
-            // tabPage1
+            // PersonalData
             // 
-            this.tabPage1.Controls.Add(this.textBox7);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.textBox6);
-            this.tabPage1.Controls.Add(this.textBox5);
-            this.tabPage1.Controls.Add(this.textBox4);
-            this.tabPage1.Controls.Add(this.textBox3);
-            this.tabPage1.Controls.Add(this.textBox2);
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(786, 381);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.PersonalData.Controls.Add(this.DateOfBirth);
+            this.PersonalData.Controls.Add(this.PhoneNumber);
+            this.PersonalData.Controls.Add(this.labelPhoneNumber);
+            this.PersonalData.Controls.Add(this.labelLogin);
+            this.PersonalData.Controls.Add(this.labelEmail);
+            this.PersonalData.Controls.Add(this.labelDateOfBirth);
+            this.PersonalData.Controls.Add(this.labelPatronymic);
+            this.PersonalData.Controls.Add(this.labelName);
+            this.PersonalData.Controls.Add(this.labelSurname);
+            this.PersonalData.Controls.Add(this.Login);
+            this.PersonalData.Controls.Add(this.Email);
+            this.PersonalData.Controls.Add(this.Patronymic);
+            this.PersonalData.Controls.Add(this.Name);
+            this.PersonalData.Controls.Add(this.Surname);
+            this.PersonalData.Location = new System.Drawing.Point(4, 22);
+            this.PersonalData.Name = "PersonalData";
+            this.PersonalData.Padding = new System.Windows.Forms.Padding(3);
+            this.PersonalData.Size = new System.Drawing.Size(786, 381);
+            this.PersonalData.TabIndex = 0;
+            this.PersonalData.Text = "Личные данные";
+            this.PersonalData.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // DateOfBirth
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(786, 381);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.DateOfBirth.Location = new System.Drawing.Point(115, 150);
+            this.DateOfBirth.Name = "DateOfBirth";
+            this.DateOfBirth.Size = new System.Drawing.Size(200, 20);
+            this.DateOfBirth.TabIndex = 14;
             // 
-            // textBox1
+            // PhoneNumber
             // 
-            this.textBox1.Location = new System.Drawing.Point(71, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.PhoneNumber.Location = new System.Drawing.Point(115, 288);
+            this.PhoneNumber.Name = "PhoneNumber";
+            this.PhoneNumber.Size = new System.Drawing.Size(200, 20);
+            this.PhoneNumber.TabIndex = 13;
             // 
-            // textBox2
+            // labelPhoneNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(71, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.labelPhoneNumber.AutoSize = true;
+            this.labelPhoneNumber.Location = new System.Drawing.Point(16, 288);
+            this.labelPhoneNumber.Name = "labelPhoneNumber";
+            this.labelPhoneNumber.Size = new System.Drawing.Size(93, 13);
+            this.labelPhoneNumber.TabIndex = 12;
+            this.labelPhoneNumber.Text = "Номер телефона";
             // 
-            // textBox3
+            // labelLogin
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 106);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.labelLogin.AutoSize = true;
+            this.labelLogin.Location = new System.Drawing.Point(16, 247);
+            this.labelLogin.Name = "labelLogin";
+            this.labelLogin.Size = new System.Drawing.Size(33, 13);
+            this.labelLogin.TabIndex = 11;
+            this.labelLogin.Text = "Login";
             // 
-            // textBox4
+            // labelEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(71, 152);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Location = new System.Drawing.Point(13, 198);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(32, 13);
+            this.labelEmail.TabIndex = 10;
+            this.labelEmail.Text = "Email";
             // 
-            // textBox5
+            // labelDateOfBirth
             // 
-            this.textBox5.Location = new System.Drawing.Point(71, 192);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 4;
+            this.labelDateOfBirth.AutoSize = true;
+            this.labelDateOfBirth.Location = new System.Drawing.Point(11, 157);
+            this.labelDateOfBirth.Name = "labelDateOfBirth";
+            this.labelDateOfBirth.Size = new System.Drawing.Size(86, 13);
+            this.labelDateOfBirth.TabIndex = 9;
+            this.labelDateOfBirth.Text = "Дата рождения";
             // 
-            // textBox6
+            // labelPatronymic
             // 
-            this.textBox6.Location = new System.Drawing.Point(71, 241);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 5;
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.labelPatronymic.AutoSize = true;
+            this.labelPatronymic.Location = new System.Drawing.Point(11, 109);
+            this.labelPatronymic.Name = "labelPatronymic";
+            this.labelPatronymic.Size = new System.Drawing.Size(54, 13);
+            this.labelPatronymic.TabIndex = 8;
+            this.labelPatronymic.Text = "Отчество";
             // 
-            // label1
+            // labelName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.labelName.AutoSize = true;
+            this.labelName.Location = new System.Drawing.Point(13, 66);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(29, 13);
+            this.labelName.TabIndex = 7;
+            this.labelName.Text = "Имя";
             // 
-            // label2
+            // labelSurname
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "label2";
+            this.labelSurname.AutoSize = true;
+            this.labelSurname.Location = new System.Drawing.Point(5, 24);
+            this.labelSurname.Name = "labelSurname";
+            this.labelSurname.Size = new System.Drawing.Size(56, 13);
+            this.labelSurname.TabIndex = 6;
+            this.labelSurname.Text = "Фамилия";
             // 
-            // label3
+            // Login
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "label3";
+            this.Login.Location = new System.Drawing.Point(115, 240);
+            this.Login.Name = "Login";
+            this.Login.Size = new System.Drawing.Size(200, 20);
+            this.Login.TabIndex = 5;
             // 
-            // label4
+            // Email
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(20, 158);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "label4";
+            this.Email.Location = new System.Drawing.Point(115, 191);
+            this.Email.Name = "Email";
+            this.Email.Size = new System.Drawing.Size(200, 20);
+            this.Email.TabIndex = 4;
             // 
-            // label5
+            // Patronymic
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "label5";
+            this.Patronymic.Location = new System.Drawing.Point(115, 109);
+            this.Patronymic.Name = "Patronymic";
+            this.Patronymic.Size = new System.Drawing.Size(200, 20);
+            this.Patronymic.TabIndex = 2;
             // 
-            // label6
+            // Name
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 247);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "label6";
+            this.Name.Location = new System.Drawing.Point(115, 66);
+            this.Name.Name = "Name";
+            this.Name.Size = new System.Drawing.Size(200, 20);
+            this.Name.TabIndex = 1;
             // 
-            // label7
+            // Surname
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 292);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "label7";
+            this.Surname.Location = new System.Drawing.Point(115, 21);
+            this.Surname.Name = "Surname";
+            this.Surname.Size = new System.Drawing.Size(200, 20);
+            this.Surname.TabIndex = 0;
             // 
-            // textBox7
+            // MakeOrder
             // 
-            this.textBox7.Location = new System.Drawing.Point(71, 292);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 13;
+            this.MakeOrder.Controls.Add(this.button1);
+            this.MakeOrder.Location = new System.Drawing.Point(4, 22);
+            this.MakeOrder.Name = "MakeOrder";
+            this.MakeOrder.Padding = new System.Windows.Forms.Padding(3);
+            this.MakeOrder.Size = new System.Drawing.Size(786, 381);
+            this.MakeOrder.TabIndex = 1;
+            this.MakeOrder.Text = "Сделать заказ";
+            this.MakeOrder.UseVisualStyleBackColor = true;
+            // 
+            // Menu
+            // 
+            this.Menu.Location = new System.Drawing.Point(4, 22);
+            this.Menu.Name = "Menu";
+            this.Menu.Padding = new System.Windows.Forms.Padding(3);
+            this.Menu.Size = new System.Drawing.Size(786, 381);
+            this.Menu.TabIndex = 2;
+            this.Menu.Text = "Меню";
+            this.Menu.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(17, 251);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // PersonalAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.tabControl1);
+            this.ClientSize = new System.Drawing.Size(800, 451);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.buttonBack);
-            this.Name = "PersonalAccount";
+            this.Name.Text = "PersonalAccount";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PersonalAccount";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PersonalAccount_FormClosing);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabControl.ResumeLayout(false);
+            this.PersonalData.ResumeLayout(false);
+            this.PersonalData.PerformLayout();
+            this.MakeOrder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -238,22 +262,24 @@
         #endregion
 
         private System.Windows.Forms.Button buttonBack;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TabPage PersonalData;
+        private System.Windows.Forms.TextBox Email;
+        private System.Windows.Forms.TextBox Patronymic;
+        private System.Windows.Forms.TextBox Name;
+        private System.Windows.Forms.TextBox Surname;
+        private System.Windows.Forms.TabPage MakeOrder;
+        private System.Windows.Forms.TextBox Login;
+        private System.Windows.Forms.TextBox PhoneNumber;
+        private System.Windows.Forms.Label labelPhoneNumber;
+        private System.Windows.Forms.Label labelLogin;
+        private System.Windows.Forms.Label labelEmail;
+        private System.Windows.Forms.Label labelDateOfBirth;
+        private System.Windows.Forms.Label labelPatronymic;
+        private System.Windows.Forms.Label labelName;
+        private System.Windows.Forms.Label labelSurname;
+        private System.Windows.Forms.DateTimePicker DateOfBirth;
+        private System.Windows.Forms.TabPage Menu;
+        private System.Windows.Forms.Button button1;
     }
 }

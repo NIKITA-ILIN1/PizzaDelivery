@@ -15,10 +15,12 @@ namespace PizzaDelivery.WindowsForms
         private SuggestClientAsync api;
         private ImplRegistrUser userDAO;
 
-        public Registration(Form previousForm)
+        public Registration(Form previousForm, string loginUser, string passwordUser)
         {
             InitializeComponent();
             this.previousForm = previousForm;
+            Login.Text = loginUser;
+            Password.Text = passwordUser;
 
             listBoxAddressesFromDaData.Visible = false;
 
@@ -49,7 +51,7 @@ namespace PizzaDelivery.WindowsForms
             newUser.Password = Password.Text;
             newUser.UserCreationTime = DateTime.Now;
 
-            if (!facadeRegistrUser.CheckExistUser(newUser))
+            if (facadeRegistrUser.CheckExistUser(newUser))
             {
                 MessageBox.Show("User already exist");
                 return;
@@ -125,23 +127,12 @@ namespace PizzaDelivery.WindowsForms
             this.Close();
         }
 
-        private void Registration_Form_FormClosing(object sender, FormClosingEventArgs e)
+        private void Registration_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing && previousForm.Visible)
-                return;
-            else if(e.CloseReason == CloseReason.UserClosing && !previousForm.Visible)
+            if (e.CloseReason == CloseReason.UserClosing && (previousForm.Visible || !previousForm.Visible))
                 return;
 
             Application.Exit();
-        }
-
-        private void listBoxAddressesFromDaData_DoubleClick(object sender, EventArgs e)
-        {
-            if (listBoxAddressesFromDaData.SelectedItem != null)
-            {
-                Address.Text = listBoxAddressesFromDaData.SelectedItem.ToString();
-                listBoxAddressesFromDaData.Visible = false;
-            }
         }
     }
 }

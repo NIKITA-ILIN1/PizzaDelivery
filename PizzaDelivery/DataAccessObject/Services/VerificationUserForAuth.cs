@@ -1,4 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
+using PizzaDelivery.DataAccessObject.Implementations;
 using PizzaDelivery.Entity;
 using System;
 
@@ -6,24 +7,24 @@ namespace PizzaDelivery
 {
     internal class VerificationUserForAuth
     {
-        public bool CheckExistUser(User user)
-        {
-            SqlConnection sqlConnection = ConnectorDataBaseMicrosoftSQL.StartConnection().SqlConnection;
+        static SqlConnection sqlConnection = ConnectorDataBaseMicrosoftSQL.StartConnection().SqlConnection;
 
+        public static bool CheckExistUser(User user)
+        {
             try
             {
                 sqlConnection.Open();
 
-                string sqlQueryCheckExistUser = "SELECT * FROM Users WHERE login = @login AND password = @password";
+                string sqlQueryCheckExistUser = "SELECT * FROM Users WHERE login = @Login AND password_hash = @Password";
 
                 SqlCommand sqlCommandCheckExistUser = new SqlCommand(sqlQueryCheckExistUser, sqlConnection);
 
-                sqlCommandCheckExistUser.Parameters.AddWithValue("@login", user.Login);
-                sqlCommandCheckExistUser.Parameters.AddWithValue("@password", user.Password);
+                sqlCommandCheckExistUser.Parameters.AddWithValue("@Login", user.Login);
+                sqlCommandCheckExistUser.Parameters.AddWithValue("@Password", user.Password);
 
                 int count = Convert.ToInt32(sqlCommandCheckExistUser.ExecuteScalar());
 
-                return count == 0;
+                return count > 0;
             }
             catch (SqlException e)
             {

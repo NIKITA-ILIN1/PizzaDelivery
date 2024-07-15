@@ -1,9 +1,9 @@
-﻿using Dadata.Model;
+﻿using PizzaDelivery.DataAccessObject.Implementations;
 using PizzaDelivery.DataAccessObject.Services;
 using PizzaDelivery.Entity;
+using PizzaDelivery.Security;
 using PizzaDelivery.WindowsForms;
 using System;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace PizzaDelivery
@@ -17,7 +17,7 @@ namespace PizzaDelivery
 
         private void buttonRegistration_Click(object sender, EventArgs e)
         {
-            WindowsForms.Registration registrationForm = new WindowsForms.Registration(this);
+            WindowsForms.Registration registrationForm = new WindowsForms.Registration(this, LoginUser.Text, PasswordUser.Text);
             registrationForm.Show();
             this.Hide();
         }
@@ -29,22 +29,21 @@ namespace PizzaDelivery
                 return;
             }
 
-            User user = new User { Login = LoginUser.Text, Password = PasswordUser.Text };
+            User user = new User { Login = LoginUser.Text, Password = ImplRegistrUser.ConvertPasswordToSha256Hash(PasswordUser.Text) };
 
-            VerificationUserForAuth verificationUserForAuth = new VerificationUserForAuth();
-
-            if (verificationUserForAuth.CheckExistUser(user))
+            if (!VerificationUserForAuth.CheckExistUser(user))
             {
                 MessageBox.Show("This user does't exist");
                 return;
             }
 
-            Security.Security sec = new Security.Security();
+            Authorization authorization  = new Authorization();
 
-            if (sec.AuthUser(user))
+            if (authorization.AuthUser(user))
             {
-                PersonalAccount personalAccount = new PersonalAccount();
-                personalAccount.ShowDialog();
+                PersonalAccount personalAccount = new PersonalAccount(this);
+                personalAccount.Show();
+                this.Hide();
             }
         }   
 

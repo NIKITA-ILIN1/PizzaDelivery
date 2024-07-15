@@ -27,10 +27,5 @@ namespace PizzaDelivery
         {
             instance = null;
         }
-
-        public static ConnectorDataBaseMicrosoftSQL GetConnection()
-        {
-            return instance;
-        }
     }
 }

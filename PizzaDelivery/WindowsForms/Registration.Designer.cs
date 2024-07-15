@@ -67,7 +67,6 @@
             this.listBoxAddressesFromDaData.Size = new System.Drawing.Size(251, 134);
             this.listBoxAddressesFromDaData.TabIndex = 41;
             this.listBoxAddressesFromDaData.SelectedIndexChanged += new System.EventHandler(this.listBoxAddressesFromDaData_SelectedIndexChanged);
-            this.listBoxAddressesFromDaData.DoubleClick += new System.EventHandler(this.listBoxAddressesFromDaData_DoubleClick);
             // 
             // Address
             // 
@@ -234,7 +233,7 @@
             this.Controls.Add(this.buttonRegister);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Регистрация";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_Form_FormClosing);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Registration_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

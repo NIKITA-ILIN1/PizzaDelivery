@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PizzaDelivery.Entity;
+using PizzaDelivery.Security;
+using System;
 using System.Windows.Forms;
 
 namespace PizzaDelivery.WindowsForms
@@ -13,16 +8,20 @@ namespace PizzaDelivery.WindowsForms
     public partial class PersonalAccount : Form
     {
         private Form previousForm;
+        private User currentUser = UserSession.GetCurrentSession().CurrentUser;
 
         public PersonalAccount(Form previousForm)
         {
             InitializeComponent();
             this.previousForm = previousForm;
-        }
 
-        public PersonalAccount()
-        {
-            InitializeComponent();
+            Surname.Text = currentUser.Surname;
+            Name.Text = currentUser.Name;
+            Patronymic.Text = currentUser.Patronymic;
+            DateOfBirth.Value = currentUser.DateOfBirth;
+            Email.Text = currentUser.Email;
+            Login.Text = currentUser.Login;
+            PhoneNumber.Text = currentUser.PhoneNumber;
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
@@ -37,16 +36,6 @@ namespace PizzaDelivery.WindowsForms
                 return;
 
             Application.Exit();
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

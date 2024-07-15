@@ -6,6 +6,6 @@ namespace PizzaDelivery.Dao.inreface
     {
         void RegisterUser(User user, Address address);
 
-        User AuthenticateUser(User user);
+        User AuthUser(User user);
     }
 }

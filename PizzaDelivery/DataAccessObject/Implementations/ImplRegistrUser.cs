@@ -17,26 +17,26 @@ namespace PizzaDelivery.DataAccessObject.Implementations
         {
             string passwordHash = ConvertPasswordToSha256Hash(user.Password);
 
-            using (SqlCommand command = new SqlCommand("RegisterUser", sqlConnection))
+            using (SqlCommand sqlCommandRegisterUser = new SqlCommand("RegisterUser", sqlConnection))
             {
-                command.CommandType = CommandType.StoredProcedure;
+                sqlCommandRegisterUser.CommandType = CommandType.StoredProcedure;
 
-                command.Parameters.AddWithValue("@Surname", user.Surname);
-                command.Parameters.AddWithValue("@Name", user.Name);
-                command.Parameters.AddWithValue("@Patronymic", user.Patronymic);
-                command.Parameters.AddWithValue("@DateOfBirth", user.DateOfBirth);
-                command.Parameters.AddWithValue("@Email", user.Email);
-                command.Parameters.AddWithValue("@Login", user.Login);
-                command.Parameters.AddWithValue("@PasswordHash", passwordHash);
-                command.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
-                command.Parameters.AddWithValue("@CityID", address.CityID);
-                command.Parameters.AddWithValue("@StreetID", address.StreetID);
-                command.Parameters.AddWithValue("@HouseNumber", address.HouseNumber);
-                command.Parameters.AddWithValue("@ApartmentNumber", address.ApartmentNumber);
-                command.Parameters.AddWithValue("@PostalCode", address.PostalCode);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@Surname", user.Surname);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@Name", user.Name);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@Patronymic", user.Patronymic);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@DateOfBirth", user.DateOfBirth);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@Email", user.Email);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@Login", user.Login);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@PasswordHash", passwordHash);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@CityID", address.CityID);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@StreetID", address.StreetID);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@HouseNumber", address.HouseNumber);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@ApartmentNumber", address.ApartmentNumber);
+                sqlCommandRegisterUser.Parameters.AddWithValue("@PostalCode", address.PostalCode);
 
                 sqlConnection.Open();
-                command.ExecuteNonQuery();
+                sqlCommandRegisterUser.ExecuteNonQuery();
             }
         }
 
@@ -127,7 +127,7 @@ namespace PizzaDelivery.DataAccessObject.Implementations
             }
         }
 
-        public User AuthenticateUser(User user)
+        public User AuthUser(User user)
         {
             throw new NotImplementedException();
         }

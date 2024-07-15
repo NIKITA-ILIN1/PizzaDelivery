@@ -1,5 +1,6 @@
 ﻿using Microsoft.Data.SqlClient;
 using PhoneNumbers;
+using PizzaDelivery.DataAccessObject.Implementations;
 using PizzaDelivery.Entity;
 using System;
 
@@ -7,7 +8,7 @@ namespace PizzaDelivery.DataAccessObject.Services
 {
     internal class VerificationsUserForRegistr
     {
-        SqlConnection sqlConnection = ConnectorDataBaseMicrosoftSQL.StartConnection().SqlConnection;
+        static SqlConnection sqlConnection = ConnectorDataBaseMicrosoftSQL.StartConnection().SqlConnection;
 
         public static string CheckEmailUser(string emailUser)
         {
@@ -57,32 +58,31 @@ namespace PizzaDelivery.DataAccessObject.Services
             }
         }
 
-        public bool CheckExistUser(User user)
+        public static bool CheckExistUser(User user)
         {
             try
             {
                 sqlConnection.Open();
 
-                string sqlQueryCheckExistUser = "SELECT * FROM Users WHERE phone_number = @phoneNumber " +
-                                                "OR email = @email OR login = @login";
+                string sqlQueryCheckExistUser = "SELECT * FROM Users WHERE phone_number = @PhoneNumber OR email = @Email OR login = @Login";
 
                 SqlCommand sqlCommandCheckExistUser = new SqlCommand(sqlQueryCheckExistUser, sqlConnection);
 
-                sqlCommandCheckExistUser.Parameters.AddWithValue("@phoneNumber", user.PhoneNumber);
-                sqlCommandCheckExistUser.Parameters.AddWithValue("@email", user.Email);
-                sqlCommandCheckExistUser.Parameters.AddWithValue("@login", user.Login);
+                sqlCommandCheckExistUser.Parameters.AddWithValue("@PhoneNumber", user.PhoneNumber);
+                sqlCommandCheckExistUser.Parameters.AddWithValue("@Email", user.Email);
+                sqlCommandCheckExistUser.Parameters.AddWithValue("@Login", user.Login);
 
                 int count = Convert.ToInt32(sqlCommandCheckExistUser.ExecuteScalar());
 
-                return count == 0;
+                return count > 0;
             }
             catch (SqlException e)
             {
                 throw new Exception("Произошла ошибка при работе с базой данных: " + e.Message);
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
-                throw new Exception("Произошла ошибка: " + ex.Message);
+                throw new Exception("Произошла ошибка: " + e.Message);
             }
             finally { sqlConnection.Close(); }
         }

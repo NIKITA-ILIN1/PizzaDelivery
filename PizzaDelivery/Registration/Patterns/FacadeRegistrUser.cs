@@ -7,8 +7,7 @@ namespace PizzaDelivery.Registration.Patterns
 {
     internal class FacadeRegistrUser
     {
-        private IUserDAO userDAO; 
-        private VerificationsUserForRegistr userService; 
+        private IUserDAO userDAO;  
 
         public User RegistrationFacade(string text, User user)
         {
@@ -26,8 +25,7 @@ namespace PizzaDelivery.Registration.Patterns
 
         public bool CheckExistUser(User user)
         {
-            userService = new VerificationsUserForRegistr();
-            return userService.CheckExistUser(user);
+            return VerificationsUserForRegistr.CheckExistUser(user);
         }
     }
 }

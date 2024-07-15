@@ -41,6 +41,9 @@
     <Reference Include="Azure.Identity, Version=1.11.3.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
       <HintPath>..\packages\Azure.Identity.1.11.3\lib\netstandard2.0\Azure.Identity.dll</HintPath>
     </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
     <Reference Include="Dadata, Version=23.6.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dadata.23.6.1\lib\netstandard2.0\Dadata.dll</HintPath>
     </Reference>
@@ -179,12 +182,14 @@
     <Compile Include="DataAccessObject\Interfaces\IUserDAO.cs" />
     <Compile Include="DataAccessObject\Services\UniversalMethodsCheckIsEmptyAndSelected.cs" />
     <Compile Include="DataAccessObject\Services\VerificationsUserForRegistr.cs" />
-    <Compile Include="Entity\Address.cs" />
-    <Compile Include="Entity\Order.cs" />
-    <Compile Include="Entity\User.cs" />
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\User.cs" />
     <Compile Include="DataAccessObject\Services\VerificationUserForAuth.cs" />
     <Compile Include="Registration\Patterns\FacadeRegistrUser.cs" />
     <Compile Include="Registration\Patterns\FactoryRegistrUser.cs" />
+    <Compile Include="Authorization\Authorization.cs" />
+    <Compile Include="Authorization\UserSession.cs" />
     <Compile Include="WindowsForms\Order.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +216,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="WindowsForms\Order.resx">
+      <DependentUpon>Order.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WindowsForms\PersonalAccount.resx">
       <DependentUpon>PersonalAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,7 +251,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Resources\Images\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.2.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
