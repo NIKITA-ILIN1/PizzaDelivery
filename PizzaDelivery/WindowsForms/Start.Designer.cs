@@ -31,8 +31,8 @@
             this.buttonAuthorization = new System.Windows.Forms.Button();
             this.labelUserPassword = new System.Windows.Forms.Label();
             this.labelUserLogin = new System.Windows.Forms.Label();
-            this.UserPassword = new System.Windows.Forms.TextBox();
-            this.UserLogin = new System.Windows.Forms.TextBox();
+            this.PasswordUser = new System.Windows.Forms.TextBox();
+            this.LoginUser = new System.Windows.Forms.TextBox();
             this.buttonRegistration = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -64,19 +64,19 @@
             this.labelUserLogin.TabIndex = 16;
             this.labelUserLogin.Text = "Логин";
             // 
-            // UserPassword
+            // PasswordUser
             // 
-            this.UserPassword.Location = new System.Drawing.Point(105, 73);
-            this.UserPassword.Name = "UserPassword";
-            this.UserPassword.Size = new System.Drawing.Size(186, 20);
-            this.UserPassword.TabIndex = 15;
+            this.PasswordUser.Location = new System.Drawing.Point(105, 73);
+            this.PasswordUser.Name = "PasswordUser";
+            this.PasswordUser.Size = new System.Drawing.Size(186, 20);
+            this.PasswordUser.TabIndex = 15;
             // 
-            // UserLogin
+            // LoginUser
             // 
-            this.UserLogin.Location = new System.Drawing.Point(105, 19);
-            this.UserLogin.Name = "UserLogin";
-            this.UserLogin.Size = new System.Drawing.Size(186, 20);
-            this.UserLogin.TabIndex = 14;
+            this.LoginUser.Location = new System.Drawing.Point(105, 19);
+            this.LoginUser.Name = "LoginUser";
+            this.LoginUser.Size = new System.Drawing.Size(186, 20);
+            this.LoginUser.TabIndex = 14;
             // 
             // buttonRegistration
             // 
@@ -88,7 +88,7 @@
             this.buttonRegistration.UseVisualStyleBackColor = true;
             this.buttonRegistration.Click += new System.EventHandler(this.buttonRegistration_Click);
             // 
-            // Start_Form
+            // Start
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,10 +96,10 @@
             this.Controls.Add(this.buttonAuthorization);
             this.Controls.Add(this.labelUserPassword);
             this.Controls.Add(this.labelUserLogin);
-            this.Controls.Add(this.UserPassword);
-            this.Controls.Add(this.UserLogin);
+            this.Controls.Add(this.PasswordUser);
+            this.Controls.Add(this.LoginUser);
             this.Controls.Add(this.buttonRegistration);
-            this.Name = "Start_Form";
+            this.Name = "Start";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PizzaDelivery";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Start_FormClosing);
@@ -112,8 +112,8 @@
         private System.Windows.Forms.Button buttonAuthorization;
         private System.Windows.Forms.Label labelUserPassword;
         private System.Windows.Forms.Label labelUserLogin;
-        private System.Windows.Forms.TextBox UserPassword;
-        private System.Windows.Forms.TextBox UserLogin;
+        private System.Windows.Forms.TextBox PasswordUser;
+        private System.Windows.Forms.TextBox LoginUser;
         private System.Windows.Forms.Button buttonRegistration;
     }
 }

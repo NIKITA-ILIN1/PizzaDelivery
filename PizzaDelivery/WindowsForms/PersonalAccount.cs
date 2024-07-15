@@ -20,6 +20,11 @@ namespace PizzaDelivery.WindowsForms
             this.previousForm = previousForm;
         }
 
+        public PersonalAccount()
+        {
+            InitializeComponent();
+        }
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             previousForm.Show();
