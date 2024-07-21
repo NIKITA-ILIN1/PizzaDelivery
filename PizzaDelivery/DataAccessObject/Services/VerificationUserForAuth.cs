@@ -1,5 +1,4 @@
 ﻿using Microsoft.Data.SqlClient;
-using PizzaDelivery.DataAccessObject.Implementations;
 using PizzaDelivery.Entity;
 using System;
 
@@ -23,6 +22,8 @@ namespace PizzaDelivery
                 sqlCommandCheckExistUser.Parameters.AddWithValue("@Password", user.Password);
 
                 int count = Convert.ToInt32(sqlCommandCheckExistUser.ExecuteScalar());
+
+                sqlConnection.Close();
 
                 return count > 0;
             }

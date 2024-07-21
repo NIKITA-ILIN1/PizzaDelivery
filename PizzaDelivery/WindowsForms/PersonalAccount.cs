@@ -24,6 +24,13 @@ namespace PizzaDelivery.WindowsForms
             PhoneNumber.Text = currentUser.PhoneNumber;
         }
 
+        private void buttonMakeTheOrder_Click(object sender, EventArgs e)
+        {
+            PizzaSelection pizzaSelection = new PizzaSelection(this);
+            pizzaSelection.Show();
+            this.Hide();
+        }
+
         private void buttonBack_Click(object sender, EventArgs e)
         {
             previousForm.Show();
@@ -32,7 +39,7 @@ namespace PizzaDelivery.WindowsForms
 
         private void PersonalAccount_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing && previousForm.Visible)
+            if (e.CloseReason == CloseReason.UserClosing && (previousForm.Visible || !previousForm.Visible))
                 return;
 
             Application.Exit();

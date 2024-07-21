@@ -46,8 +46,8 @@
             this.Name = new System.Windows.Forms.TextBox();
             this.Surname = new System.Windows.Forms.TextBox();
             this.MakeOrder = new System.Windows.Forms.TabPage();
+            this.buttonMakeTheOrder = new System.Windows.Forms.Button();
             this.Menu = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.PersonalData.SuspendLayout();
             this.MakeOrder.SuspendLayout();
@@ -202,6 +202,7 @@
             this.Name.Name = "Name";
             this.Name.Size = new System.Drawing.Size(200, 20);
             this.Name.TabIndex = 1;
+            this.Name.Text = "PersonalAccount";
             // 
             // Surname
             // 
@@ -212,7 +213,7 @@
             // 
             // MakeOrder
             // 
-            this.MakeOrder.Controls.Add(this.button1);
+            this.MakeOrder.Controls.Add(this.buttonMakeTheOrder);
             this.MakeOrder.Location = new System.Drawing.Point(4, 22);
             this.MakeOrder.Name = "MakeOrder";
             this.MakeOrder.Padding = new System.Windows.Forms.Padding(3);
@@ -220,6 +221,16 @@
             this.MakeOrder.TabIndex = 1;
             this.MakeOrder.Text = "Сделать заказ";
             this.MakeOrder.UseVisualStyleBackColor = true;
+            // 
+            // buttonMakeTheOrder
+            // 
+            this.buttonMakeTheOrder.Location = new System.Drawing.Point(17, 251);
+            this.buttonMakeTheOrder.Name = "buttonMakeTheOrder";
+            this.buttonMakeTheOrder.Size = new System.Drawing.Size(75, 23);
+            this.buttonMakeTheOrder.TabIndex = 0;
+            this.buttonMakeTheOrder.Text = "Заказать";
+            this.buttonMakeTheOrder.UseVisualStyleBackColor = true;
+            this.buttonMakeTheOrder.Click += new System.EventHandler(this.buttonMakeTheOrder_Click);
             // 
             // Menu
             // 
@@ -231,15 +242,6 @@
             this.Menu.Text = "Меню";
             this.Menu.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(17, 251);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // PersonalAccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,7 +249,6 @@
             this.ClientSize = new System.Drawing.Size(800, 451);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.buttonBack);
-            this.Name.Text = "PersonalAccount";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PersonalAccount";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PersonalAccount_FormClosing);
@@ -280,6 +281,6 @@
         private System.Windows.Forms.Label labelSurname;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
         private System.Windows.Forms.TabPage Menu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonMakeTheOrder;
     }
 }

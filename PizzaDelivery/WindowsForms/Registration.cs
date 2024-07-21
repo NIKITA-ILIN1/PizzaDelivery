@@ -13,7 +13,7 @@ namespace PizzaDelivery.WindowsForms
     {
         private Form previousForm;
         private SuggestClientAsync api;
-        private ImplRegistrUser userDAO;
+        private ImplRegistrUser userDAO = new ImplRegistrUser();
 
         public Registration(Form previousForm, string loginUser, string passwordUser)
         {
@@ -26,7 +26,6 @@ namespace PizzaDelivery.WindowsForms
 
             var token = "ca31e39548cf4ccc48017654a9b62c4fe704048e";
             api = new SuggestClientAsync(token);
-            userDAO = new ImplRegistrUser();
         }
 
         private async void buttonRegister_Click(object sender, EventArgs e)
@@ -70,8 +69,8 @@ namespace PizzaDelivery.WindowsForms
             var addressParts = addressData.data;
             var cityName = addressParts.city;
             var streetName = addressParts.street;
-            int cityID = await userDAO.GetOrCreateCityID(cityName);
-            int streetID = await userDAO.GetOrCreateStreetID(streetName);
+            int cityID = await userDAO.GetOrCreateCityIDAsync(cityName);
+            int streetID = await userDAO.GetOrCreateStreetIDAsync(streetName);
 
             Address newAddress = new Address
             {

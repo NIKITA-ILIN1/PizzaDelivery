@@ -74,6 +74,8 @@ namespace PizzaDelivery.DataAccessObject.Services
 
                 int count = Convert.ToInt32(sqlCommandCheckExistUser.ExecuteScalar());
 
+                sqlConnection.Close();
+
                 return count > 0;
             }
             catch (SqlException e)

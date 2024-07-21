@@ -39,8 +39,9 @@ namespace PizzaDelivery.DataAccessObject.Implementations
                         findedUser.UserCreationTime = (DateTime)sqlDataReader.GetValue(9);
                     }
                 }
-                sqlConnection.Close();
             }
+
+            sqlConnection.Close();
 
             return findedUser;
         }

@@ -178,12 +178,15 @@
   <ItemGroup>
     <Compile Include="Connections\ConnectorDataBaseMicrosoftSQL .cs" />
     <Compile Include="DataAccessObject\Implementations\ImplAuthUser.cs" />
+    <Compile Include="DataAccessObject\Implementations\ImplProduct.cs" />
     <Compile Include="DataAccessObject\Implementations\ImplRegistrUser.cs" />
+    <Compile Include="DataAccessObject\Interfaces\IProductDAO.cs" />
     <Compile Include="DataAccessObject\Interfaces\IUserDAO.cs" />
     <Compile Include="DataAccessObject\Services\UniversalMethodsCheckIsEmptyAndSelected.cs" />
     <Compile Include="DataAccessObject\Services\VerificationsUserForRegistr.cs" />
     <Compile Include="Entities\Address.cs" />
-    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderItem.cs" />
+    <Compile Include="Entities\Product.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="DataAccessObject\Services\VerificationUserForAuth.cs" />
     <Compile Include="Registration\Patterns\FacadeRegistrUser.cs" />
@@ -202,6 +205,12 @@
     <Compile Include="WindowsForms\PersonalAccount.Designer.cs">
       <DependentUpon>PersonalAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowsForms\PizzaSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsForms\PizzaSelection.Designer.cs">
+      <DependentUpon>PizzaSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="WindowsForms\Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,11 +225,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="WindowsForms\Order.resx">
-      <DependentUpon>Order.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="WindowsForms\PersonalAccount.resx">
       <DependentUpon>PersonalAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WindowsForms\PizzaSelection.resx">
+      <DependentUpon>PizzaSelection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowsForms\Registration.resx">
       <DependentUpon>Registration.cs</DependentUpon>

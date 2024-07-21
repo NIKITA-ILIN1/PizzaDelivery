@@ -40,7 +40,7 @@ namespace PizzaDelivery.DataAccessObject.Implementations
             }
         }
 
-        public async Task<int> GetOrCreateCityID (string cityName)
+        public async Task<int> GetOrCreateCityIDAsync(string cityName)
         {
             int cityID;
 
@@ -75,7 +75,7 @@ namespace PizzaDelivery.DataAccessObject.Implementations
             return cityID;
         }
 
-        public async Task<int> GetOrCreateStreetID(string streetName)
+        public async Task<int> GetOrCreateStreetIDAsync(string streetName)
         {
             int streetID;
 
